@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
+<coverage line-rate="1.0" branch-rate="1.0" lines-covered="10" lines-valid="10" branches-covered="2" branches-valid="2" complexity="0.0" timestamp="1615555383" version="gcovr 4.2">
+  <sources>
+    <source>/home/steed/Desktop/session_work/IntroClass/digits/tests</source>
+  </sources>
+  <packages>
+    <package name="" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+      <classes>
+        <class name="digits_c" filename="digits.c" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="4" hits="121" branch="false"/>
+            <line number="6" hits="121" branch="false"/>
+            <line number="7" hits="121" branch="false"/>
+            <line number="8" hits="968" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="9" hits="847" branch="false"/>
+            <line number="10" hits="847" branch="false"/>
+            <line number="11" hits="847" branch="false"/>
+            <line number="13" hits="121" branch="false"/>
+            <line number="14" hits="121" branch="false"/>
+            <line number="15" hits="121" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

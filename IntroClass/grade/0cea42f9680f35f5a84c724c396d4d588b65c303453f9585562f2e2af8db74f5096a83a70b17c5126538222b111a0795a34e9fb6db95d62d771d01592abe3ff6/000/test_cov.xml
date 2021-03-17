@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
+<coverage line-rate="0.3157894736842105" branch-rate="0.09090909090909091" lines-covered="6" lines-valid="19" branches-covered="2" branches-valid="22" complexity="0.0" timestamp="1615453570" version="gcovr 4.2">
+  <sources>
+    <source>/home/steed/Desktop/session_work/IntroClass/grade/0cea42f9680f35f5a84c724c396d4d588b65c303453f9585562f2e2af8db74f5096a83a70b17c5126538222b111a0795a34e9fb6db95d62d771d01592abe3ff6/000</source>
+  </sources>
+  <packages>
+    <package name="" line-rate="0.3157894736842105" branch-rate="0.09090909090909091" complexity="0.0">
+      <classes>
+        <class name="grade_c" filename="grade.c" line-rate="0.3157894736842105" branch-rate="0.09090909090909091" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="3" hits="1" branch="false"/>
+            <line number="5" hits="1" branch="false"/>
+            <line number="6" hits="1" branch="false"/>
+            <line number="7" hits="1" branch="false"/>
+            <line number="8" hits="1" branch="true" condition-coverage="33% (2/6)">
+              <conditions>
+                <condition number="0" type="jump" coverage="33%"/>
+              </conditions>
+            </line>
+            <line number="9" hits="0" branch="false"/>
+            <line number="11" hits="0" branch="false"/>
+            <line number="12" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="13" hits="0" branch="false"/>
+            <line number="14" hits="0" branch="true" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="15" hits="0" branch="false"/>
+            <line number="16" hits="0" branch="true" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="17" hits="0" branch="false"/>
+            <line number="18" hits="0" branch="true" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="19" hits="0" branch="false"/>
+            <line number="20" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="21" hits="0" branch="false"/>
+            <line number="23" hits="0" branch="false"/>
+            <line number="25" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

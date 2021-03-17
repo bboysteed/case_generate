@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
+<coverage line-rate="1.0" branch-rate="0.6666666666666666" lines-covered="10" lines-valid="10" branches-covered="8" branches-valid="12" complexity="0.0" timestamp="1615555042" version="gcovr 4.2">
+  <sources>
+    <source>/home/steed/Desktop/session_work/IntroClass/syllables/0cea42f9680f35f5a84c724c396d4d588b65c303453f9585562f2e2af8db74f5096a83a70b17c5126538222b111a0795a34e9fb6db95d62d771d01592abe3ff6/000</source>
+  </sources>
+  <packages>
+    <package name="" line-rate="1.0" branch-rate="0.6666666666666666" complexity="0.0">
+      <classes>
+        <class name="syllables_c" filename="syllables.c" line-rate="1.0" branch-rate="0.6666666666666666" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="5" hits="1" branch="false"/>
+            <line number="7" hits="1" branch="false"/>
+            <line number="8" hits="1" branch="false"/>
+            <line number="9" hits="1" branch="false"/>
+            <line number="10" hits="1" branch="false"/>
+            <line number="11" hits="7" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="12" hits="6" branch="true" condition-coverage="60% (6/10)">
+              <conditions>
+                <condition number="0" type="jump" coverage="60%"/>
+              </conditions>
+            </line>
+            <line number="13" hits="1" branch="false"/>
+            <line number="16" hits="1" branch="false"/>
+            <line number="17" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
