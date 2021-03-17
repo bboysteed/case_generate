@@ -1,8 +1,5 @@
 package module
 
-
-
-
 type Info struct {
 	AllStudents []*Student `json:"all_students"`
 }
