@@ -1,6 +1,6 @@
 <template>
   <div>
-    我是grades页面
+    我是{{this.projectName}}页面
     <ul>
       <li v-for="(stu,index) in stuInfo" :key="index">
         {{ stu.stu_name | enShort(index)}}
@@ -17,15 +17,23 @@
 <script>
 
 export default {
-  name: "Grade",
+  name: "Public",
   data() {
     return {
-      projectName: "grade",
+      projectName: null ,
       stuInfo: null
     }
   },
   mounted() {
+    this.projectName=this.$route.params.projectName
+    console.log(this.projectName)
     this.fetchData()
+  },
+  watch:{
+    $route(){
+      this.projectName = this.$route.params.projectName
+      this.fetchData()
+    }
   },
   methods: {
     fetchData() {
