@@ -1,4 +1,3 @@
-#!/home/steed/Desktop/session_work/case_generate/introClass_cases/venv/bin/python3
 import csv
 from xml.dom.minidom import parse
 from syllables.getcovrate import *
@@ -7,8 +6,9 @@ from syllables.getcovrate import *
     @定义全局变量
     @此文件是用于获取被测试文件的覆盖率信息矩阵的
 """
-
-case_path = f"/home/steed/Desktop/session_work/case_generate/introClass_cases/{module_name}/tmpFile/cases"
+param = sys.argv
+case_gen_py_project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),"../../"))
+case_path = os.path.join(case_gen_py_project_dir, module_name, "temFile/cases")
 matrix = []
 
 
@@ -43,7 +43,7 @@ def get_reporter():
 
 
 def get_matrix():
-    test_file_path = "/home/steed/Desktop/session_work/IntroClass/syllables/0cea42f9680f35f5a84c724c396d4d588b65c303453f9585562f2e2af8db74f5096a83a70b17c5126538222b111a0795a34e9fb6db95d62d771d01592abe3ff6/000"
+    test_file_path = os.path.join(intro_class_dir,param[1],param[2],param[3])
     case_file = open(case_path, "r")
     rewrite_makefile(test_file_path)
     make_clean_test_file(test_file_path)

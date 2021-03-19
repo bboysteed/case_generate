@@ -26,13 +26,13 @@
     </el-col>
 
     <el-col :span="12" class="el-col-push-3" style="margin-top: 20px">
-      <el-card v-loading ="loading" class="box-card">
+      <el-card v-loading="loading" class="box-card">
         <div slot="header" class="clearfix">
           <span>用例列表</span>
           <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
         </div>
         <div v-for="(acase,indx) in caseContent" :key="indx" class="text item">
-          ({{indx }})--- {{acase}}
+          ({{ indx }})--- {{ acase }}
         </div>
       </el-card>
     </el-col>
@@ -156,20 +156,19 @@ export default {
             }
           })
           .then((response) => {
-            if (response.status === 500) {
-              console.log("失败")
+            console.log(response)
+
+            if (response.data.status !== 'ok') {
               this.$message.error("提交失败")
-            } else if (response.status === 200) {
+            } else if (response.data.status === 'ok') {
               this.$message.success("success")
-              console.log(response.data)
-              // this.codeContent = response.data.codeContent
-              // console.log(this.codeContent)
+              this.caseContent = response.data.cases
             }
           })
           .catch((error) => {
             console.log(error)
           })
-      this.loading= false
+      this.loading = false
     }
   }
 

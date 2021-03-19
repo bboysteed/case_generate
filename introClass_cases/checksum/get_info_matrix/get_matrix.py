@@ -1,13 +1,17 @@
 import csv
 from xml.dom.minidom import parse
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"../../")))
 from checksum.getcovrate import *
 
 """
     @定义全局变量
     @此文件是用于获取被测试文件的覆盖率信息矩阵的
 """
-
-case_path = f"/home/steed/Desktop/session_work/git_work/case_generate/introClass_cases/{module_name}/tmpFile/cases"
+param = sys.argv
+case_gen_py_project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),"../../"))
+case_path = os.path.join(case_gen_py_project_dir, module_name, "tmpFile/cases")
 matrix = []
 
 
@@ -42,7 +46,7 @@ def get_reporter():
 
 
 def get_matrix():
-    test_file_path = "/home/steed/Desktop/session_work/IntroClass/checksum/1b31fa5c50f7725ce468ebf24282f2d080a83aed87e4ee35522ae7710c8e0136bc263cc460b8ec7bf2c3519cb59af4a138e114d36541515b2609ab56ad2b8ee9/000"
+    test_file_path = os.path.join(intro_class_dir,param[1],param[2],param[3])
     case_file = open(case_path, "r")
     rewrite_makefile(test_file_path)
     make_clean_test_file(test_file_path)

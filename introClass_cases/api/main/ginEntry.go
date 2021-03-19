@@ -15,7 +15,7 @@ import (
 const (
 	introClassBaseDir        = "/home/steed/Desktop/session_work/git_work/case_generate/IntroClass"
 	introClassCaseGenBaseDir = "/home/steed/Desktop/session_work/git_work/case_generate/introClass_cases"
-	pythonDir                = "/bin/python"
+	pythonDir                = "/home/steed/Desktop/session_work/git_work/case_generate/introClass_cases/venv/bin/python"
 )
 
 func main() {
@@ -33,16 +33,24 @@ func main() {
 func geneCases(context *gin.Context) {
 	projectName := context.Query("projectName")
 	log.Info().Msg( path.Join(introClassCaseGenBaseDir,projectName,"gen_cases.py"))
-	_, err := exec.Command(pythonDir, path.Join(introClassCaseGenBaseDir,projectName,"gen_cases.py")).Output()
+	out,err := exec.Command("bash","-c",pythonDir, path.Join(introClassCaseGenBaseDir,projectName,"gen_cases.py")).Output()
 	if err != nil {
-		log.Error().Msgf("run script failed ,err is:%s",err.Error())
-		context.JSON(http.StatusInternalServerError,gin.H{
+		log.Warn().Msgf("run script failed ,out is:%s\t%s",out,err.Error())
+		context.JSON(http.StatusOK,gin.H{
 			"status":"fail to start gen case script",
 			"reason":"not sure",
 			"cases":"",
 		})
 	}else {
-		buf,err:=ioutil.ReadFile(path.Join(introClassCaseGenBaseDir,"temFile","cases"))
+		//err = cmd.Wait()
+		//if err != nil {
+		//	log.Warn().Msgf("wait failed ,out is:\t%s",err.Error())
+		//}
+		//oot,err1:=cmd.Output()
+		//
+		log.Info().Msgf("%s",out)
+
+		buf,err:=ioutil.ReadFile(path.Join(introClassCaseGenBaseDir,projectName,"tmpFile","cases"))
 		if err != nil {
 			log.Error().Msgf("read file err:%s",err.Error())
 			return

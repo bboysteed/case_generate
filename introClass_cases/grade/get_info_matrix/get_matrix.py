@@ -1,15 +1,20 @@
-#!/home/steed/Desktop/session_work/case_generate/introClass_cases/venv/bin/python3
 import csv
 from xml.dom.minidom import parse
+import sys
+import os
 
-from median.getcovrate import *
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+from grade.getcovrate import *
 
 """
     @定义全局变量
     @此文件是用于获取被测试文件的覆盖率信息矩阵的
 """
+param = sys.argv
 
-case_path = f"/home/steed/Desktop/session_work/case_generate/introClass_cases/{module_name}/tmpFile/cases"
+case_gen_py_project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+case_path = os.path.join(case_gen_py_project_dir, module_name, "tmpFile/cases")
+
 matrix = []
 
 
@@ -36,7 +41,7 @@ def add_title():
 
 
 def get_reporter():
-    report_file = open("../tmpFile/report.csv", "w", newline='',encoding="utf-8")
+    report_file = open("../tmpFile/report.csv", "w", newline='', encoding="utf-8")
     writer = csv.writer(report_file)
     for row in matrix:
         writer.writerow(row)
@@ -44,7 +49,7 @@ def get_reporter():
 
 
 def get_matrix():
-    test_file_path = "/home/steed/Desktop/session_work/IntroClass/median/0cdfa335eea3c612e6fa3ad261276b0c3ebbc6ff0ff13c20bdc249bad29a8037ca6dc887dd28558964e1e1a24f47c4cffc05adba525285dc8b93660cdf9b8b7c/002"
+    test_file_path = os.path.join(intro_class_dir, param[1], param[2], param[3])
     case_file = open(case_path, "r")
     rewrite_makefile(test_file_path)
     make_clean_test_file(test_file_path)

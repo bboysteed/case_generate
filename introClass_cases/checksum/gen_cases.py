@@ -2,8 +2,8 @@ import sys
 
 import matplotlib.pyplot as plt
 from sko.GA import GA_TSP
-
-sys.path.append(r"/home/steed/Desktop/session_work/git_work/case_generate/introClass_cases")
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"../../")))
 from getcovrate import *
 from utils.pycui import *
 

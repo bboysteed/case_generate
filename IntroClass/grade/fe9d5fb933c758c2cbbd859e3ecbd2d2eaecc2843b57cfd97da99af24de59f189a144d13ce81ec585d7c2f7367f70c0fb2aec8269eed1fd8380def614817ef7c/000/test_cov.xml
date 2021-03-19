@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
+<coverage line-rate="0.625" branch-rate="0.21428571428571427" lines-covered="10" lines-valid="16" branches-covered="3" branches-valid="14" complexity="0.0" timestamp="1616135003" version="gcovr 4.2">
+  <sources>
+    <source>/home/steed/Desktop/session_work/git_work/case_generate/IntroClass/grade/fe9d5fb933c758c2cbbd859e3ecbd2d2eaecc2843b57cfd97da99af24de59f189a144d13ce81ec585d7c2f7367f70c0fb2aec8269eed1fd8380def614817ef7c/000</source>
+  </sources>
+  <packages>
+    <package name="" line-rate="0.625" branch-rate="0.21428571428571427" complexity="0.0">
+      <classes>
+        <class name="grade_c" filename="grade.c" line-rate="0.625" branch-rate="0.21428571428571427" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="5" hits="1" branch="false"/>
+            <line number="9" hits="1" branch="false"/>
+            <line number="10" hits="1" branch="false"/>
+            <line number="11" hits="1" branch="false"/>
+            <line number="12" hits="1" branch="false"/>
+            <line number="13" hits="1" branch="false"/>
+            <line number="15" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="16" hits="0" branch="false"/>
+            <line number="17" hits="1" branch="true" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="18" hits="1" branch="false"/>
+            <line number="19" hits="0" branch="true" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="20" hits="0" branch="false"/>
+            <line number="21" hits="0" branch="true" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="22" hits="0" branch="false"/>
+            <line number="24" hits="0" branch="false"/>
+            <line number="26" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
