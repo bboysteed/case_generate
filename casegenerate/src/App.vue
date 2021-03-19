@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <h2 class="h2-class">introClass</h2>
+    <h2 class="h2-class">
+      <img :src="logoPath" alt="" style="width: 60px;height: 60px">
+      introClass
+    </h2>
     <el-menu
-
-        class="el-menu-demo"
         mode="horizontal"
         background-color="#545c64"
         text-color="#ffffff"
@@ -13,7 +14,7 @@
       <el-menu-item v-for="(item,i) in itemList" :key="i" :index="item.copUrl">
         <template slot="title">
           <i class="el-icon-tickets"></i>
-          <span> {{ item.copName }}</span>
+          <span class="el-calendar__title"> {{ item.copName }}</span>
         </template>
       </el-menu-item>
     </el-menu>
@@ -30,6 +31,7 @@ export default {
   name: 'App',
   data() {
     return {
+      logoPath:require('@/statics/icon/logo.png'),
       itemList: [
         {copUrl: '/views/grade', copName: 'grade'},
         {copUrl: '/views/digits', copName: 'digits'},
@@ -49,8 +51,18 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*text-align: center;*/
   color: #2c3e50;
-  margin-top: 60px;
 }
+.el-calendar__title {
+  font-size: 25px;
+}
+.h2-class{
+  margin-top: 15px;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+.el-menu{
+  margin-top: 10px;
+}
+
 </style>

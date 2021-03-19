@@ -3,7 +3,7 @@ import sys
 import matplotlib.pyplot as plt
 from sko.GA import GA_TSP
 
-sys.path.append(r"/home/steed/Desktop/session_work/case_generate/introClass_cases")
+sys.path.append(r"/home/steed/Desktop/session_work/git_work/case_generate/introClass_cases")
 from getcovrate import *
 from utils.pycui import *
 

@@ -7,7 +7,7 @@ from checksum.getcovrate import *
     @此文件是用于获取被测试文件的覆盖率信息矩阵的
 """
 
-case_path = f"/home/steed/Desktop/session_work/case_generate/introClass_cases/{module_name}/tmpFile/cases"
+case_path = f"/home/steed/Desktop/session_work/git_work/case_generate/introClass_cases/{module_name}/tmpFile/cases"
 matrix = []
 
 

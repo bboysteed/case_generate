@@ -16,11 +16,11 @@ export default new Router({
       name: 'public',
       component: () => import('@/components/Public')
     },
-    // {
-    //   path: '/views/digits',
-    //   name: 'digits',
-    //   component: () => import('@/components/Digits')
-    // },
+    {
+      path: '/views/:projectName/caseGenerate',
+      name: 'caseGenerate',
+      component: () => import('@/components/CaseGenerate')
+    },
     // {
     //   path: '/views/median',
     //   name: 'median',

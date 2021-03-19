@@ -1,16 +1,26 @@
 package module
 
+
+
+
 type Info struct {
 	AllStudents []*Student `json:"all_students"`
 }
 
 type Student struct {
-	StuName string `json:"stu_name"`
-	JobsNames []string `json:"jobs_names"`
+	StuValue string `json:"value"`
+	StuName string `json:"label"`
+	Jobs []*Job `json:"children"`
 }
-
-func (st *Student) AppendJob(jobName string) {
-	st.JobsNames = append(st.JobsNames, jobName)
+type Job struct {
+	JobValue string `json:"value"`
+	JobName string `json:"label"`
+}
+func (st *Student) AppendJob(jobName string,jobValue string) {
+	st.Jobs = append(st.Jobs, &Job{
+		JobName: jobName,
+		JobValue: jobValue,
+	})
 }
 
 func (info *Info) AppendStudent(stu *Student) {
