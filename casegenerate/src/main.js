@@ -7,6 +7,7 @@ import Axios from 'axios'
 import qs from 'qs';
 import codemirror from 'vue-codemirror'
 import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/3024-night.css'
 Vue.use(codemirror)
 Vue.prototype.$qs = qs;
 Vue.config.productionTip = false

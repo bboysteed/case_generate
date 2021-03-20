@@ -9,6 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
+      redirect:'/views/grade',
       component: () => import('@/components/HelloWorld')
     },
     {

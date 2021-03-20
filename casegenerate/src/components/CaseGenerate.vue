@@ -18,23 +18,21 @@
         v-model="algoSelectedOptions"
         @change="handleAlgoChange">
     </el-cascader>
-    <el-button round type="primary" style="margin-left: 30px" @click="commitMission">
+    <el-button icon="el-icon-check" round type="primary" style="margin-left: 30px" @click="commitMission">
       生成测试用例
     </el-button>
-    <el-col :span="12">
+    <el-col :span="12" style="margin: 30px">
       <codemirror :value="codeContent" :options="cmOptions" class="code-mirror"></codemirror>
     </el-col>
 
     <el-col :span="12" class="el-col-push-3" style="margin-top: 20px">
-      <el-card v-loading="loading" class="box-card">
-        <div slot="header" class="clearfix">
-          <span>用例列表</span>
-          <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
-        </div>
-        <div v-for="(acase,indx) in caseContent" :key="indx" class="text item">
-          ({{ indx }})--- {{ acase }}
-        </div>
-      </el-card>
+      <div slot="header" class="clearfix">
+        <span>用例列表</span>
+      </div>
+      <ul class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
+        <li v-for="(acase,indx) in caseContent" :key="indx" class="infinite-list-item">({{ indx }})--- {{ acase }}</li>
+      </ul>
+
     </el-col>
 
   </div>
@@ -91,7 +89,8 @@ export default {
         readOnly: true,
         mode: 'text/x-c',
         tabSize: 4,
-        line: true
+        line: true,
+        theme:"3024-night"
       }
 
     };
@@ -106,7 +105,7 @@ export default {
       if (value[1] !== "TSP") {
         this.$message.error("目前仅支持TSP遗传算法")
       } else {
-        console.log("axios")
+        this.$message.success("success")
       }
     },
     handleChange(value) {
@@ -158,11 +157,10 @@ export default {
           .then((response) => {
             console.log(response)
 
-            if (response.data.status !== 'ok') {
+            if (response.data.status==="submit ok") {
+              this.$message.success("提交成功")
+            } else if (response.data.status==="submit error") {
               this.$message.error("提交失败")
-            } else if (response.data.status === 'ok') {
-              this.$message.success("success")
-              this.caseContent = response.data.cases
             }
           })
           .catch((error) => {
@@ -184,12 +182,6 @@ export default {
   float: left;
 }
 
-
-/*.box-card {*/
-/*  !*width: 40%;*!*/
-/*  !*float: right;*!*/
-/*  !*margin-top: 10px;*!*/
-/*}*/
 .text {
   font-size: 14px;
 }
@@ -198,11 +190,5 @@ export default {
   padding: 2px 0;
 }
 
-.box-card {
-  width: 400px;
-  /*float: right;*/
-  vertical-align: center;
-  height: 600px;
-}
 
 </style>

@@ -2,16 +2,21 @@ import sys
 
 import matplotlib.pyplot as plt
 from sko.GA import GA_TSP
-
+# from pyRabbitMQ.rabbitmq_comsumer import py_mq_send
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
-from getcovrate import *
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from grade.getcovrate import *
+# from pyRabbitMQ.rabbitmq_comsumer import py_mq_send
 from utils.pycui import *
 
 cui = pycui()
 num_points = 5
-cases_file = open("./tmpFile/cases", "w+")
+
+cases_path = os.path.abspath(os.path.join(os.path.dirname(__file__),"tmpFile/cases"))
+datain_path = os.path.abspath(os.path.join(os.path.dirname(__file__),"tmpFile/data.in"))
+cases_file = ''
+
 make_bench_file_clean()
 make_bench_file()
 
@@ -23,7 +28,7 @@ make_bench_file()
 def get_conv_rate(serial):
     # cui.info("A serial is : {}".format(serial))
     for j in range(0, len(serial), num_points):
-        tem_ipf = open("./tmpFile/data.in", "w+")
+        tem_ipf = open(datain_path, "w+")
         a_case = list(serial[j:j + num_points])
         sorted_data = sorted(a_case[:-1], reverse=True)
         a_case[:-1] = sorted_data
@@ -43,10 +48,20 @@ def get_conv_rate(serial):
     return covr_rate
 
 
-ga_tsp = GA_TSP(func=get_conv_rate, n_dim=num_points, size_pop=4, max_iter=10, prob_mut=1, case_type=module_name)
-best_case, best_covrate = ga_tsp.run()
-cui.success("best_points:{}\nbest_distance:{}\n".format(best_case, best_covrate))
-cases_file.close()
+def gen_loop(chan):
+    global cases_file
+    cases_file = open(cases_path, "w+")
+    ga_tsp = GA_TSP(func=get_conv_rate, n_dim=num_points, size_pop=4, max_iter=10, prob_mut=1, case_type=module_name)
+    best_case, best_covrate = ga_tsp.run()
+    cui.success("best_points:{}\nbest_distance:{}\n".format(best_case, best_covrate))
+    cases_file.close()
+
+    # mission is over
+    message = "genCases ok"
+    chan.basic_publish(exchange='',
+                       routing_key='goQueue',
+                       body=message)
+    print(f" python [x] Sent:  {message}")
 
 # # %% plot
 # scatter_x = []
