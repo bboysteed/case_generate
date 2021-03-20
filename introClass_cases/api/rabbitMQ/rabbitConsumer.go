@@ -1,4 +1,4 @@
-package main
+package rabbitMQ
 
 import (
 	"api/utils/log"
