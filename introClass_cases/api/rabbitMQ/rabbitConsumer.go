@@ -2,7 +2,7 @@ package rabbitMQ
 
 import "api/utils/log"
 
-func MqMessageConsumer(isok bool){
+func MqMessageConsumer(isok *bool){
 	msgs,recErr := ch.Consume(
 		queueRecv.Name,
 		"",
@@ -19,8 +19,8 @@ func MqMessageConsumer(isok bool){
 		messageRec := string(msg.Body)
 		log.Info().Msgf("golang recv msg:%s",messageRec)
 		if messageRec == "genCases ok" {
-			isok = true
-			log.Info().Msgf("isok:%v",isok)
+			*isok = true
+			log.Info().Msgf("isok:%v",*isok)
 		}
 		//break
 	}

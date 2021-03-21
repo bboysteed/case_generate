@@ -2,7 +2,7 @@ import time
 
 import pika
 import threading
-from grade.gen_cases import *
+import grade,median
 
 
 def consumer_callback(channel, method, properties, body):
@@ -11,9 +11,15 @@ def consumer_callback(channel, method, properties, body):
     print("py recv msg:",body)
     # time.sleep(4)
     # py_mq_send("{}".format(time.time()))
-    mission = threading.Thread(target=gen_loop,args=(chan,))
-    mission.start()
-    mission.join()
+    pjname = body.decode()
+    if pjname == "grade":
+        mission = threading.Thread(target=grade.gen_cases.gen_loop,args=(chan,))
+        mission.start()
+        mission.join()
+    elif pjname == "median":
+        mission = threading.Thread(target=median.gen_cases.gen_loop,args=(chan,))
+        mission.start()
+        mission.join()
 
 
 def py_mq_send(message):

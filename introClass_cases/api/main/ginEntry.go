@@ -15,10 +15,9 @@ import (
 const (
 	introClassBaseDir        = "/home/steed/Desktop/session_work/git_work/case_generate/IntroClass"
 	introClassCaseGenBaseDir = "/home/steed/Desktop/session_work/git_work/case_generate/introClass_cases"
-	pythonDir                = "/home/steed/Desktop/session_work/git_work/case_generate/introClass_cases/venv/bin/python"
 )
 
-var casesFileOk bool = false
+var casesFileOk = false
 
 func main() {
 	gin.SetMode(gin.DebugMode)
@@ -45,6 +44,8 @@ func consultFileContent(context *gin.Context) {
 				"status": "read file err",
 				"cases":  "",
 			})
+
+		}else {
 			cases := make(map[int]string, 0)
 			for k, v := range strings.Split(string(buf), "\n") {
 				cases[k] = v
@@ -77,7 +78,7 @@ func geneCases(context *gin.Context) {
 		})
 	} else {
 		go func() {
-			rabbitMQ.MqMessageConsumer(casesFileOk)
+			rabbitMQ.MqMessageConsumer(&casesFileOk)
 
 		}()
 		context.JSON(http.StatusOK, gin.H{

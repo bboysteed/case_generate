@@ -42,19 +42,10 @@ def get_conv_rate(serial):
 
     return covr_rate
 
+def gen_loop():
+    ga_tsp = GA_TSP(func=get_conv_rate, n_dim=num_points, size_pop=4, max_iter=10, prob_mut=1,case_type=module_name)
+    best_case, best_covrate = ga_tsp.run()
+    cui.success("best_points:{}\nbest_distance:{}\n".format(best_case, best_covrate))
+    cases_file.close()
 
-ga_tsp = GA_TSP(func=get_conv_rate, n_dim=num_points, size_pop=4, max_iter=10, prob_mut=1,case_type=module_name)
-best_case, best_covrate = ga_tsp.run()
-cui.success("best_points:{}\nbest_distance:{}\n".format(best_case, best_covrate))
-cases_file.close()
 
-# %% plot
-scatter_x = []
-scatter_y = []
-for i in range(0, len(ga_tsp.all_history_Y)):
-    scatter_x.extend([i + 1] * len(ga_tsp.all_history_Y[i]))
-    scatter_y.extend(list(ga_tsp.all_history_Y[i]))
-fig, ax = plt.subplots(1, 2)
-ax[0].scatter(scatter_x, scatter_y, s=10, alpha=0.5)
-ax[1].plot(ga_tsp.generation_best_Y)
-plt.show()

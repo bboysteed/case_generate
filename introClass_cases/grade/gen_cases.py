@@ -51,7 +51,7 @@ def get_conv_rate(serial):
 def gen_loop(chan):
     global cases_file
     cases_file = open(cases_path, "w+")
-    ga_tsp = GA_TSP(func=get_conv_rate, n_dim=num_points, size_pop=4, max_iter=10, prob_mut=1, case_type=module_name)
+    ga_tsp = GA_TSP(func=get_conv_rate, n_dim=num_points, size_pop=4, max_iter=6, prob_mut=1, case_type=module_name)
     best_case, best_covrate = ga_tsp.run()
     cui.success("best_points:{}\nbest_distance:{}\n".format(best_case, best_covrate))
     cases_file.close()
