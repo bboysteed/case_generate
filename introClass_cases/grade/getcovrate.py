@@ -11,14 +11,7 @@ from utils.pycui import *
 """
     @module_name      全局路径设定
 """
-module_name = "grade"
-intro_class_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../IntroClass"))
-module_base_path = os.path.join(intro_class_dir, module_name)
-module_testFile_path = os.path.join(module_base_path, "tests")
-makeFile_path = os.path.join(module_base_path, "Makefile")
-bench_execu_file_path = os.path.join(module_testFile_path, module_name)
-cov_xml_path = os.path.join(module_testFile_path, "cov.xml")
-cov_json_path = os.path.join(module_testFile_path, "cov.json")
+
 """
     @color      颜色输出模块
 """

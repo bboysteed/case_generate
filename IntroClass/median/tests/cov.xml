@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
-<coverage line-rate="0.7333333333333333" branch-rate="0.5" lines-covered="11" lines-valid="15" branches-covered="3" branches-valid="6" complexity="0.0" timestamp="1615554517" version="gcovr 4.2">
+<coverage line-rate="0.7333333333333333" branch-rate="0.5" lines-covered="11" lines-valid="15" branches-covered="3" branches-valid="6" complexity="0.0" timestamp="1616417040" version="gcovr 4.2">
   <sources>
-    <source>/home/steed/Desktop/session_work/IntroClass/median/tests</source>
+    <source>/home/steed/Desktop/session_work/git_work/case_generate/IntroClass/median/tests</source>
   </sources>
   <packages>
     <package name="" line-rate="0.7333333333333333" branch-rate="0.5" complexity="0.0">
@@ -10,33 +10,33 @@
         <class name="median_c" filename="median.c" line-rate="0.7333333333333333" branch-rate="0.5" complexity="0.0">
           <methods/>
           <lines>
-            <line number="7" hits="46" branch="false"/>
-            <line number="11" hits="46" branch="false"/>
-            <line number="12" hits="46" branch="false"/>
-            <line number="14" hits="46" branch="true" condition-coverage="50% (1/2)">
+            <line number="7" hits="47" branch="false"/>
+            <line number="11" hits="47" branch="false"/>
+            <line number="12" hits="47" branch="false"/>
+            <line number="14" hits="47" branch="true" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="50%"/>
               </conditions>
             </line>
             <line number="15" hits="0" branch="false"/>
             <line number="16" hits="0" branch="false"/>
-            <line number="19" hits="46" branch="false"/>
-            <line number="20" hits="46" branch="false"/>
-            <line number="22" hits="46" branch="true" condition-coverage="50% (1/2)">
+            <line number="19" hits="47" branch="false"/>
+            <line number="20" hits="47" branch="false"/>
+            <line number="22" hits="47" branch="true" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="50%"/>
               </conditions>
             </line>
             <line number="23" hits="0" branch="false"/>
-            <line number="24" hits="46" branch="true" condition-coverage="50% (1/2)">
+            <line number="24" hits="47" branch="true" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="50%"/>
               </conditions>
             </line>
             <line number="25" hits="0" branch="false"/>
-            <line number="27" hits="46" branch="false"/>
-            <line number="29" hits="46" branch="false"/>
-            <line number="31" hits="46" branch="false"/>
+            <line number="27" hits="47" branch="false"/>
+            <line number="29" hits="47" branch="false"/>
+            <line number="31" hits="47" branch="false"/>
           </lines>
         </class>
       </classes>

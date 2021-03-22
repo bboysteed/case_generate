@@ -2,7 +2,7 @@ import csv
 from xml.dom.minidom import parse
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"../../")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 from checksum.getcovrate import *
 
 """
@@ -10,7 +10,7 @@ from checksum.getcovrate import *
     @此文件是用于获取被测试文件的覆盖率信息矩阵的
 """
 param = sys.argv
-case_gen_py_project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),"../../"))
+case_gen_py_project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 case_path = os.path.join(case_gen_py_project_dir, module_name, "tmpFile/cases")
 matrix = []
 

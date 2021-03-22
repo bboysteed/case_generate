@@ -15,7 +15,7 @@ num_points = 5
 
 cases_path = os.path.abspath(os.path.join(os.path.dirname(__file__),"tmpFile/cases"))
 datain_path = os.path.abspath(os.path.join(os.path.dirname(__file__),"tmpFile/data.in"))
-cases_file = ''
+cases_file = None
 
 make_bench_file_clean()
 make_bench_file()
@@ -53,8 +53,7 @@ def gen_loop(chan):
     cases_file = open(cases_path, "w+")
     ga_tsp = GA_TSP(func=get_conv_rate, n_dim=num_points, size_pop=4, max_iter=6, prob_mut=1, case_type=module_name)
     best_case, best_covrate = ga_tsp.run()
-    cui.success("best_points:{}\nbest_distance:{}\n".format(best_case, best_covrate))
-    cases_file.close()
+
 
     # mission is over
     message = "genCases ok"

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
-<coverage line-rate="1.0" branch-rate="1.0" lines-covered="16" lines-valid="16" branches-covered="8" branches-valid="8" complexity="0.0" timestamp="1616333278" version="gcovr 4.2">
+<coverage line-rate="1.0" branch-rate="1.0" lines-covered="16" lines-valid="16" branches-covered="8" branches-valid="8" complexity="0.0" timestamp="1616417274" version="gcovr 4.2">
   <sources>
     <source>/home/steed/Desktop/session_work/git_work/case_generate/IntroClass/grade/tests</source>
   </sources>
@@ -10,38 +10,38 @@
         <class name="grade_c" filename="grade.c" line-rate="1.0" branch-rate="1.0" complexity="0.0">
           <methods/>
           <lines>
-            <line number="3" hits="2701" branch="false"/>
-            <line number="5" hits="2701" branch="false"/>
-            <line number="6" hits="2701" branch="false"/>
-            <line number="7" hits="2701" branch="false"/>
-            <line number="9" hits="2701" branch="false"/>
-            <line number="10" hits="2701" branch="false"/>
-            <line number="12" hits="2701" branch="true" condition-coverage="100% (2/2)">
+            <line number="3" hits="2920" branch="false"/>
+            <line number="5" hits="2920" branch="false"/>
+            <line number="6" hits="2920" branch="false"/>
+            <line number="7" hits="2920" branch="false"/>
+            <line number="9" hits="2920" branch="false"/>
+            <line number="10" hits="2920" branch="false"/>
+            <line number="12" hits="2920" branch="true" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="100%"/>
               </conditions>
             </line>
-            <line number="13" hits="500" branch="false"/>
-            <line number="14" hits="2201" branch="true" condition-coverage="100% (2/2)">
+            <line number="13" hits="554" branch="false"/>
+            <line number="14" hits="2366" branch="true" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="100%"/>
               </conditions>
             </line>
-            <line number="15" hits="520" branch="false"/>
-            <line number="16" hits="1681" branch="true" condition-coverage="100% (2/2)">
+            <line number="15" hits="558" branch="false"/>
+            <line number="16" hits="1808" branch="true" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="100%"/>
               </conditions>
             </line>
-            <line number="17" hits="439" branch="false"/>
-            <line number="18" hits="1242" branch="true" condition-coverage="100% (2/2)">
+            <line number="17" hits="471" branch="false"/>
+            <line number="18" hits="1337" branch="true" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="100%"/>
               </conditions>
             </line>
-            <line number="19" hits="527" branch="false"/>
-            <line number="21" hits="715" branch="false"/>
-            <line number="22" hits="2701" branch="false"/>
+            <line number="19" hits="567" branch="false"/>
+            <line number="21" hits="770" branch="false"/>
+            <line number="22" hits="2920" branch="false"/>
           </lines>
         </class>
       </classes>

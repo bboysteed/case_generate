@@ -3,7 +3,7 @@ import sys
 import matplotlib.pyplot as plt
 from sko.GA import GA_TSP
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"../../")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 from getcovrate import *
 from utils.pycui import *
 

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
-<coverage line-rate="1.0" branch-rate="0.75" lines-covered="8" lines-valid="8" branches-covered="3" branches-valid="4" complexity="0.0" timestamp="1616134017" version="gcovr 4.2">
+<coverage line-rate="1.0" branch-rate="0.75" lines-covered="8" lines-valid="8" branches-covered="3" branches-valid="4" complexity="0.0" timestamp="1616418896" version="gcovr 4.2">
   <sources>
     <source>/home/steed/Desktop/session_work/git_work/case_generate/IntroClass/checksum/tests</source>
   </sources>
@@ -10,18 +10,18 @@
         <class name="checksum_c" filename="checksum.c" line-rate="1.0" branch-rate="0.75" complexity="0.0">
           <methods/>
           <lines>
-            <line number="3" hits="121" branch="false"/>
-            <line number="8" hits="121" branch="false"/>
-            <line number="10" hits="121" branch="false"/>
-            <line number="13" hits="1089" branch="true" condition-coverage="75% (3/4)">
+            <line number="3" hits="269" branch="false"/>
+            <line number="8" hits="269" branch="false"/>
+            <line number="10" hits="269" branch="false"/>
+            <line number="13" hits="2421" branch="true" condition-coverage="75% (3/4)">
               <conditions>
                 <condition number="0" type="jump" coverage="75%"/>
               </conditions>
             </line>
-            <line number="15" hits="968" branch="false"/>
-            <line number="17" hits="121" branch="false"/>
-            <line number="19" hits="121" branch="false"/>
-            <line number="20" hits="121" branch="false"/>
+            <line number="15" hits="2152" branch="false"/>
+            <line number="17" hits="269" branch="false"/>
+            <line number="19" hits="269" branch="false"/>
+            <line number="20" hits="269" branch="false"/>
           </lines>
         </class>
       </classes>

@@ -1,23 +1,45 @@
-import time
+import threading
 
 import pika
-import threading
-import grade,median
+
+from projectClass.project_model import GenerateCases
 
 
 def consumer_callback(channel, method, properties, body):
     # projectName = body.split(",")[0]
     # message = body.split(",")[1]
-    print("py recv msg:",body)
+    print("py recv msg:", body)
     # time.sleep(4)
     # py_mq_send("{}".format(time.time()))
-    pjname = body.decode()
+    pjname = body.decode().split(",")[0]
     if pjname == "grade":
-        mission = threading.Thread(target=grade.gen_cases.gen_loop,args=(chan,))
+        proGen = GenerateCases(pro_name=pjname)
+        mission = threading.Thread(target=proGen.run, args=(chan,))
         mission.start()
         mission.join()
     elif pjname == "median":
-        mission = threading.Thread(target=median.gen_cases.gen_loop,args=(chan,))
+        proGen = GenerateCases(pro_name=pjname,genlength=3)
+        mission = threading.Thread(target=proGen.run, args=(chan,))
+        mission.start()
+        mission.join()
+    elif pjname == "smallest":
+        proGen = GenerateCases(pro_name=pjname,genlength=4)
+        mission = threading.Thread(target=proGen.run, args=(chan,))
+        mission.start()
+        mission.join()
+    elif pjname == "digits":
+        proGen = GenerateCases(pro_name=pjname,genlength=8)
+        mission = threading.Thread(target=proGen.run, args=(chan,))
+        mission.start()
+        mission.join()
+    elif pjname == "syllables":
+        proGen = GenerateCases(pro_name=pjname,genlength=6)
+        mission = threading.Thread(target=proGen.run, args=(chan,))
+        mission.start()
+        mission.join()
+    elif pjname == "checksum":
+        proGen = GenerateCases(pro_name=pjname,genlength=8)
+        mission = threading.Thread(target=proGen.run, args=(chan,))
         mission.start()
         mission.join()
 
@@ -28,7 +50,6 @@ def py_mq_send(message):
                        body=message
                        )
     print(f" python [x] Sent{message}")
-
 
 
 credentials = pika.PlainCredentials("admin", "123456")
@@ -49,7 +70,6 @@ chan.queue_declare(
     exclusive=False,
 
 )
-
 
 chan.queue_declare(
     queue="pyQueue",

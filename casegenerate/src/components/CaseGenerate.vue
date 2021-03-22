@@ -34,7 +34,7 @@
       <p v-else>用例列表：</p>
       <el-col v-loading="loading" :span="8" style="margin-left: 30px;margin-top: 10px" class="case-style">
         <ul class="infinite-list" :v-infinite-scroll="load">
-          <li v-for="(acase,indx) in caseContentShow" :key="acase" class="infinite-list-item">
+          <li v-for="(acase,indx) in caseContentShow" :key="indx" class="infinite-list-item">
             ({{ indx }})--- {{ acase }}
           </li>
         </ul>
@@ -57,7 +57,7 @@ export default {
     return {
       projectName: null,
       jobOptions: null,
-      jobSelectedOptions: ['资源', '组件交互文档'],
+      jobSelectedOptions: ['035fe90b24b4ff56975fbd6242879bdfd422686189d7fedadb2ba64bb9820150b501dc681379bff2f1b0b2efd50a3dc272fea6fa3509cf3dfd088f8d0267888d', '000'],
       algoSelectedOptions: ['遗传算法'],
       algorithmOptions: [
         {
@@ -110,6 +110,7 @@ export default {
   mounted() {
     this.projectName = this.$route.params.projectName
     this.getSelectMenu()
+
     //this.initWebsocket()
   },
   computed: {
@@ -161,11 +162,13 @@ export default {
           ))
           .then((response) => {
             this.jobOptions = response.data.message.all_students
-            // console.log(this.stuInfo)
+            this.handleChange([this.jobOptions[0].value,this.jobOptions[0].children[0].value])
           })
           .catch((error) => {
             console.log(error)
           })
+
+
     },
     commitMission() {
       this.$axios
@@ -225,7 +228,8 @@ export default {
             }
           })
           .then((response) => {
-            console.log(response)
+            // console.log(response)
+
 
             if (response.data.status === "ok") {
               this.loading = false
@@ -243,8 +247,8 @@ export default {
     load() {
       this.caseContentShowLineCount += 3
       this.caseContentShow = Object.values(this.caseContent).slice(0, this.caseContentShowLineCount)
-      console.log("3333-==-=", this.caseContent)
-      console.log("caseContentShowLineCount:", this.caseContentShowLineCount)
+      // console.log("3333-==-=", this.caseContent)
+      // console.log("caseContentShowLineCount:", this.caseContentShowLineCount)
       // console.log("caseContentShowLineCount:", this.caseContentShowLineCount)
 
     }
